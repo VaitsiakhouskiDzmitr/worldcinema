@@ -1,0 +1,198 @@
+{% load static %}
+{% load movie_tag %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <link rel="stylesheet"  href="{% static "css/styles.css" %}">
+
+    <title>
+        смотреть фильмы сериалы мультфильмы в HD качестве
+    </title>
+  </head>
+  <body>
+    <div class="grid">
+      <div style="background: white;"></div>
+      <div class="main_panel" style="background: white;">
+        <div class="go_home_panel">
+          <b><a href="{% url 'triller_list_url' %}">WorldCinema</a></b>
+        </div>
+        <div class="category_panel">
+          <div class="categoryes">
+            <b><a href="{% url 'Category_movies_url' %}">фильмы</a></b>
+            <b><a href="{% url 'Category_Series_url' %}">сериалы</a></b>
+            <b><a href="{% url 'Category_movies_mult_url' %}">мультфильмы</a></b>
+            <b><a href="{% url 'Category_movies_anime_url' %}">аниме</a></b>
+          </div>
+          <div class="search_panel">
+
+            <form action="{% url 'movie_list_url' %}"  class="search">
+              {% csrf_token %}
+            	<input type="search" name="search" placeholder="поиск" class="input" />
+            	<input type="submit" name="" value="" class="submit" />
+            </form>
+          </div>
+        </div>
+        <div class="couruselpanel">
+
+          {% for movies in movies_courusel %}
+
+          <a href="{{movies.get_absolute_url}}" class="editContent">
+          <div class="cardcorousel" style="font-size: 11px; font-family: Verdana, Genevra, sans-serif;">
+            <img src="{{movies.poster.url}}" class="img-fluid" alt="">
+            {{movies.title}}
+          </div>
+          </a>
+          {% endfor %}
+
+        </div>
+        <div class="navigationpanel">
+          <div class="genrespanel">
+            <table>
+
+              <caption><b>жанры</b></caption>
+              <tr>
+
+                <td><a href="{% url 'Fatastic_list_url' %}">фантастика</a></td>
+                <td><a href="{% url 'Fatasy_list_url' %}">фентази</a></td>
+                <td><a href="{% url 'Ujasi_list_url' %}">ужасы</a></td>
+                <td><a href="{% url 'Vestern_list_url' %}">вестерн</a></td>
+                <td><a href="{% url 'Comedy_list_url' %}">комедия</a></td>
+
+              </tr>
+              <tr>
+
+                <td><a href="{% url 'Sport_list_url' %}">спорт</a></td>
+                <td><a href="{% url 'Family_list_url' %}">семейный</a></td>
+                <td><a href="{% url 'Priclucheniya_list_url' %}">приключения</a></td>
+                <td><a href="{% url 'triller_list_url' %}">триллер</a></td>
+                <td><a href="{% url 'Biographi_list_url' %}">биография</a></td>
+
+              </tr>
+              <tr>
+
+                <td><a href="{% url 'Music_list_url' %}">музыка</a></td>
+                <td><a href="{% url 'Criminal_list_url' %}">криминал</a></td>
+                <td><a href="{% url 'History_list_url' %}">история</a></td>
+                <td><a href="{% url 'Boevik_list_url' %}">боевик</a></td>
+                <td><a href="{% url 'Voenniy_list_url' %}">военный</a></td>
+
+              </tr>
+              <tr>
+
+                <td><a href="{% url 'Documental_list_url' %}">документальный</a></td>
+                <td><a href="{% url 'Drama_list_url' %}">драма</a></td>
+                <td><a href="{% url 'Detectiv_list_url' %}">детектив</a></td>
+                <td><a href="{% url 'Zarubejnie_list_url' %}">зарубежные</a></td>
+                <td><a href="{% url 'Russkie_list_url' %}">русские</a></td>
+
+              </tr>
+            </table>
+          </div>
+          <div class="yearspanel">
+            <table>
+
+              <caption><b>Год</b></caption>
+              <tr>
+                <td><a href="{% url 'year_2019_url' %}">2019</a></td>
+                <td><a href="{% url 'year_2020_url' %}">2020</a></td>
+
+              </tr>
+              <tr>
+                <td><a href="{% url 'year_2017_url' %}">2017</a></td>
+                <td><a href="{% url 'year_2018_url' %}">2018</a></td>
+
+              </tr>
+              <tr>
+                <td><a href="{% url 'year_2015_url' %}">2015</a></td>
+                <td><a href="{% url 'year_2016_url' %}">2016</a></td>
+
+              </tr>
+              <tr>
+                <td><a href="{% url 'year_2013_url' %}">2013</a></td>
+                <td><a href="{% url 'year_2014_url' %}">2014</a></td>
+              </tr>
+            </table>
+          </div>
+          <div class="seriespanel">
+            <table>
+
+              <caption><b>сериалы</b></caption>
+              <tr>
+                <td><a href="{% url 'Series_zarubejnie_url' %}">зарубежные</a></td>
+              </tr>
+              <tr>
+                <td><a href="{% url 'Series_russkie_url' %}">русские</a></td>
+
+              </tr>
+
+              </table>
+            </div>
+
+          </div>
+        </div>
+      <div style="background: white;"></div>
+      <div style="background: white;"></div>
+
+      <div class="span-2 subitems" style="background: white;">
+        {% block content %}
+        any content
+        {% endblock %}
+      </div>
+      <div class="right_panel" style="background: white;">
+        <div class="recomended_title">
+
+          <h3>рекомендуем посмотреть</h3>
+        </div>
+        <div class="recomended_film" style="font-size: 11px; font-family: Verdana, Genevra, sans-serif;">
+
+          {% for recomended in recomended_film_list %}
+
+          <div class="recomended_film_list">
+          <a href="{{recomended.get_absolute_url}}" class="editContent">
+
+              <img src="{{recomended.poster.url}}" class="img-fluid" alt="">
+
+
+              {{recomended.title}}
+
+
+
+          </a>
+          </div>
+          {% endfor %}
+
+        </div>
+
+      </div>
+      <div style="background: white;"></div>
+      <div style="background: white;"></div>
+      <div class="pagination_panel">
+        <ul class="pagination " >
+          <li class="{% if not prev_url %} disabled{% endif %}"><a href="{{ prev_url }}">«</a></li>
+
+
+
+
+
+            {% for n in movie_list.paginator.page_range %}
+              {% if movie_list.number == n %}
+                <li><a class="active" href="?page{{ n }}">{{ n }}</a></li>
+              {% elif n > movie_list.number|add:-3 and n < movie_list.number|add:3 %}
+
+                <li><a href="?page={{ n }}">{{ n }}</a></li>
+              {% endif %}
+            {% endfor %}
+          <li class="{% if not next_url %} disabled{% endif %}"><a href="{{ next_url }}">»</a></li>
+        </ul>
+      </div>
+      <div style="background: white;"></div>
+      <div style="background: white;"></div>
+
+
+    </div>
+  </body>
+</html>
+
+<!-- style=" background-image: url(http://falcon.r.acdnpro.com/media/1/2/12797764347859_144.webp);"-->

@@ -1,0 +1,340 @@
+body{
+  margin: 0;
+}
+/* СЕТКА CSS*/
+.grid{
+  display: grid;
+  grid-template-columns: minmax(0px,450px) 670px 350px minmax(0px,450px);
+  grid-template-rows: 306px 1590px 30px;
+
+}
+
+.grid div{
+
+
+
+
+}
+.main_panel:nth-child(2){
+  grid-column-start: 2;
+  grid-column-end: 4;
+}
+/*НАВИГАЦИОННАЯ панель*/
+.go_home_panel{
+  height: 35px;
+  background: #E1E1E1;
+  box-shadow: 0px 15px 10px -15px #111;
+  text-align: center;
+  font-size: 30px;
+}
+.category_panel{
+  height: 30px;
+
+  padding-top: 10px;
+}
+.categoryes{
+  display: inline-block;
+  width: 500px;
+  padding-bottom: 10px;
+}
+.categoryes b{
+  border: 1px solid black;
+  margin-left: 10px;
+  padding: 5px;
+  margin-bottom: 5px;
+  border-radius: 5px;
+  background-color: #F4F4F4;
+  vertical-align: top;
+}
+
+.search_panel{
+  display: inline-block;
+  width: 500px;
+  height: 22px;
+}
+
+.navigationpanel{
+  height: 220px;
+
+
+  padding-top: 10px;
+  padding-left: 10px;
+  padding-bottom: 10px;
+  padding-right: 10px;
+  width: 997px;
+  margin-left:  10px;
+
+
+  vertical-align: top;
+
+}
+.genrespanel{
+  width: 650px;
+
+  padding: 5px;
+  display: inline-grid;
+  vertical-align: top;
+}
+
+.yearspanel td {
+  border: 1px solid black;;
+  width: 70px;
+  text-align: center;
+
+}
+.yearspanel{
+  width: 130px;
+
+  padding: 5px;
+  display: inline-grid;
+  vertical-align: top;
+}
+.seriespanel{
+
+  height: 176px;
+  width: 170px;
+
+  padding: 5px;
+
+  display: inline-grid;
+  vertical-align: top;
+}
+
+.navigationpanel table {border-collapse: separate; border-spacing: 10px; empty-cells: show;}
+.navigationpanel th{border: 2px solid #69c;}
+.navigationpanel td {
+  border: 1px solid black;
+  width: 120px;
+  text-align: center;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+}
+.navigationpanel caption {
+text-align: center;
+padding: 10px;
+font-size: 17px;
+
+border-bottom: 2px solid black;
+}
+
+
+/*ВЫВОД ФИЛЬМА И ДЕТАЛЕЙ К НЕМУ*/
+.subitems{
+ padding: 5px;
+}
+/*НАЗВАНИЕ ФИЛЬМА*/
+.title{
+  margin: 0px;
+
+  font-size: 30px;
+}
+
+.original_title{
+  margin-top: 5px;
+  margin-bottom: 5px;
+  font-size: 20px;
+}
+
+/* ПОСТЕР */
+.card {
+  background-color: #F4F4F4;
+
+  display: inline-block;
+
+  width: 200px;
+  height: 300px;
+
+  padding-top: 7.5px;
+  padding-left: 7.5px;
+  padding-right: 7.5px;
+  padding-bottom: 7.5px;
+
+  border: 1px solid black;
+  border-radius: 5px;
+  vertical-align: top;
+}
+img {
+  width: 185px;
+  height: 285px;
+}
+
+/* ТАБЛИЦА С ИНФОРМАЦИЕЙ*/
+.table{
+display: inline-block;
+vertical-align: top;
+}
+
+.table_price {
+  width: 440px;
+  border-collapse: collapse;
+  font-family: "Lucida Grande", sans-serif;
+}
+
+.table_price td, .table_price th {
+  padding: 5px;
+}
+.table_price th {
+  text-align: left;
+  font-size: 18px;
+}
+.table_price tr:nth-child(2n) {
+  background: #F4F4F4;
+}
+.table_price td:last-of-type {
+  text-align: left;
+}
+.table_price a {
+  display: inline-block;
+  padding: 5px 10px;
+  background: #F79361;
+  position: relative;
+}
+.table_price a:hover {
+  box-shadow: none;
+  top: 2px;
+  left: 2px;
+}
+
+/* онлайн трелер */
+.trailer_panel{
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 10px;
+  border: 1px solid black;
+  background-color: #F4F4F4;
+  border-radius: 5px;
+  }
+h3{
+  margin: 0;
+}
+
+
+/**/
+.movie-description_header{
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 0px;
+  }
+h3{
+  margin: 0;
+}
+/*ОПИСАНИЕ*/
+.movie-description{
+  margin-bottom: 10px;
+  padding: 5px;
+}
+.movie-description p{
+  font-style: italic;
+}
+/*PLAYER*/
+.mediaplayer{
+  height: 520px;
+  background-color: black;
+}
+
+iframe{
+
+  padding-left:8px;
+  padding-right: 8px;
+  padding-top: 20px;
+  padding-bottom: 0px;
+}
+
+/**/
+
+
+/*''''''*/
+.search {
+	/* устанавливаем необходимую ширину формы в зависимости от дизайна
+	** форма без проблем растягивается */
+	width: 35%;
+
+  display: inline-grid;
+  vertical-align: 0%;
+  float: right;
+
+
+	/* кнопку отправки будем позиционировать абсолютно,
+	** поэтому необходимо это свойство */
+	position: relative;
+}
+
+.search input {
+	/* отключаем бордюры у инпутов */
+	border: none;
+}
+
+/* стили для поля ввода */
+.search .input {
+	/* растягиваем поле ввода на всю ширину формы */
+	width: 100%;
+
+	/* за счет верхнего (8px) и нижнего (9px) внутренних отступов
+	** регулируем высоту формы
+	** внутренний отступ справа (37px) делаем больше левого,
+	** т.к. там будет размещена кнопка отправки	*/
+	padding: 8px 37px 9px 15px;
+
+	/* чтобы ширина поля ввода (100%) включала в себя внутренние отступы */
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+
+	/* добавляем внутренние тени */
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.1), inset 0 1px 2px rgba(0,0,0,0.3);
+
+	/* закругляем углы */
+	border-radius: 20px;
+
+	background: #EEE;
+	font: 13px Tahoma, Arial, sans-serif;
+	color: #555;
+	outline: none;
+}
+
+/* меняем оформление поля ввода при фокусе */
+.search .input:focus {
+	box-shadow: inset 0 0 5px rgba(0,0,0,0.2), inset 0 1px 2px rgba(0,0,0,0.4);
+	background: #E8E8E8;
+	color: #333;
+}
+
+/* оформляем кнопку отправки */
+.search .submit {
+	/* позиционируем кнопку абсолютно от правого края формы */
+	position: absolute;
+	top: 0;
+	right: 0;
+
+	width: 37px;
+
+	/* растягиваем кнопку на всю высоту формы */
+	height: 100%;
+
+	cursor: pointer;
+	background: url(https://lh4.googleusercontent.com/-b-5aBxcxarY/UAfFW9lVyjI/AAAAAAAABUg/gQtEXuPuIds/s13/go.png) 50% no-repeat;
+
+	/* добавляем прозрачность кнопке отправки */
+	opacity: 0.5;
+}
+
+/* при наведении курсора меняем прозрачность кнопки отправки */
+.search .submit:hover {
+	opacity: 0.8;
+}
+
+/* данное свойство необходимо для того, чтобы в браузерах
+** Chrome и Safari можно было стилизовать инпуты */
+input[type="search"] {
+	-webkit-appearance: none;
+}
+
+a{
+  text-decoration: none ;
+  color : black;
+}
+a:visited{
+  color: black;
+}
+a:active{
+  color: black;
+}
